@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+@include('components/head.html')
+
+<body>
+
+  <div class="container">
+    <div class="wrapper">
+      @include('components/sidebar.html')
+
+      <main class="main">
+        <button type="button" class="burger" aria-label="Close Sidebar Menu" id="burger">
+          <span class="burger__line"></span>
+        </button>
+        @include('components/overview.html')
+        @include('components/features.html')
+        @include('components/technology.html')
+        @include('components/contact.html')
+        @include('components/login-page.html')
+      </main>
+    </div>
+  </div>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
