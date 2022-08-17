@@ -1,0 +1,84 @@
+.sidebar {
+    position: relative;
+    padding: 30px 0;
+    color: $white;
+    @include adaptiveValue("font-size", 25, 16);
+    font-weight: 600;
+    background-color: $accent;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+
+    @include r(992) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        max-width: 240px;
+        width: 100%;
+        padding: 30px 0 30px;
+        transform: translateX(-200%);
+        transition: transform 0.3s ease 0s;
+    }
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 1 auto;
+    }
+
+    &__button {
+        position: relative;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+        padding: 20px 30px;
+        width: 100%;
+        border-bottom: 1px solid rgba(126, 120, 120, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
+
+        &:hover {
+            color: rgba($primary, 0.7);
+        }
+
+        &:focus {
+            text-decoration: underline;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            background: url('../../images/icons/arrow.svg') no-repeat;
+            transform: rotate(-90deg);
+        }
+        &.active {
+            background-color: rgb(188, 96, 96);
+        }
+    }
+}
+
+
+.logo {
+    padding: 0 10px 0 30px;
+    flex: 0 0 42px;
+
+    @include r(768) {
+        flex: 0 0 22px;
+
+    }
+
+    &__image {
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+    }
+}
